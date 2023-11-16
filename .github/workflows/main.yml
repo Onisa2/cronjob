@@ -1,0 +1,26 @@
+name: Update Image Tag
+
+on:
+  repository_dispatch:
+    types: [update-image-tags]
+
+jobs:
+  update_image_tags:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.client_payload.sha }}
+
+    - name: Update Image Tag
+      run: |
+        # Implement your logic to update the image tag in your staging environment
+        # This could involve modifying configuration files or scripts
+
+    - name: Commit and Push Changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add .
+        git commit -m "Update image tag"
+        git push origin main
