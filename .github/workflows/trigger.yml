@@ -11,12 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-  debug-payload:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Debug Payload
-        run: echo "Payload: ${{ toJson(github.event.client_payload) }}"
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+  
 
 
