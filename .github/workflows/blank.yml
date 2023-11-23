@@ -29,11 +29,11 @@ jobs:
           git fetch target-repo main
           
           # Fetch the latest changes from the source branch
-          git fetch origin new
+          git fetch origin main
           
           # Merge the changes from the source branch to the main branch of the target repository
           git checkout -b main target-repo/main
-          git merge --allow-unrelated-histories -X theirs origin/new
+          git merge --allow-unrelated-histories -X theirs origin/main
           
           # Push the changes to the main branch of the target repository
           git push target-repo main
