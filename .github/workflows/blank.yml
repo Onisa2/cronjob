@@ -3,7 +3,7 @@ name: Mirror to Main
 on:
   push:
     branches:
-      - new
+      - main
 
 jobs:
   mirror_to_main:
