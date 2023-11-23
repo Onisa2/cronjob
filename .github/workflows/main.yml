@@ -15,7 +15,7 @@ jobs:
     - name: Update Image Tag
       run: |
         # Implement your logic to update the image tag in your staging environment
-        # This could involve modifying configuration files or scripts
+        # This could involve modifying configuration files or scriptsbeeeeee
 
     - name: Commit and Push Changes
       run: |
