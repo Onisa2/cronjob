@@ -1,0 +1,27 @@
+name: Sync to Another Repo
+
+on:
+  push:
+    branches:
+      - main # You can change this to the branch you want to monitor
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Repo
+      uses: actions/checkout@v2
+
+    - name: Configure Git
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+    - name: Push to Another Repo
+      run: |
+        git remote add target_repo https://github.com/Onisa2/cloudrun.git
+        git push target_repo 'new' -u ${{ secrets.TOKEN }}
+
+
+  # Add more jobs or steps as needed
